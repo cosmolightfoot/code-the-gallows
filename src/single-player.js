@@ -3,26 +3,26 @@ const buildGallows = [
     {
         name: 'head',
         imgSrc: ''
-    },
-    {
-        name: 'torso',
-        imgSrc: ''
-    },
-    {
-        name: 'left-arm',
-        imgSrc: ''
-    },
-    {
-        name: 'right-arm',
-        imgSrc: ''
-    },
-    {
-        name: 'left-leg',
-        imgSrc:''
-    },
-    {
-        name: 'right-leg',
-        imgSrc:''
+    // },
+    // {
+    //     name: 'torso',
+    //     imgSrc: ''
+    // },
+    // {
+    //     name: 'left-arm',
+    //     imgSrc: ''
+    // },
+    // {
+    //     name: 'right-arm',
+    //     imgSrc: ''
+    // },
+    // {
+    //     name: 'left-leg',
+    //     imgSrc:''
+    // },
+    // {
+    //     name: 'right-leg',
+    //     imgSrc:''
     }
 ];
 
