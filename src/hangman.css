@@ -1,5 +1,4 @@
 .penalty-block {
-    border: 1px solid black;
     width: 50px;
     height: 50px;
 }
@@ -10,65 +9,138 @@ header {
 main {
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 #gallows {
     width: 700px;
-    height: 600px;
+    height: 400px;
     position: relative;
+    display: flex;
+    align-self: center;
     background-image: url('../assets/gallows-1.jpeg');
     background-position: top;
-    background-size: 55%;
+    background-size: 30%;
     background-color: #212121;
     background-repeat: no-repeat;
+}
+#objective-word {
+    border: 1px solid black;
+    display: flex;
+    align-self: center;
+    height: 75px;
+    width: 500px;
+    margin: 10px;
+    margin-bottom: -10px;
+}
+#letter-buttons {
+    border: 1px solid black;
+    width: 600px;
+    height: 150px;
+    margin: 20px;
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-top: -10px;
+}
+.letter-button {
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    border-radius: 10%;
+}
+#row-one {
+    display: flex;
+    justify-content: space-around;
+    width: 600px;
+
+}
+#row-two {
+    display: flex;
+    justify-content: space-evenly;
+    width: 600px;
+}
+#row-three {
+    display: flex;
+    justify-content: space-evenly;
+    width: 600px;
 }
 #head {
     background-image: url('../assets/will-ferrell-1.png');
     display: flex;
     justify-content: center;
     position: absolute;
-    width: 80px;
-    height: 100px;
-    top: 115px;
-    left: 45%;
+    width: 85px;
+    height: 85px;
+    top: 93px;
+    left: 44.4%;
 }
 #torso {
-    background-color: yellow;
+    background-color: none;
+    display: flex;
+    justify-content: center;
     position: absolute;
-    top: 80px;
-    width: 100px;
-    height: 125px;
-    left: 40%;
+    top: 140px;
+    width: 125px;
+    height: 200px;
+    left: 41.1%;
+    padding: 0px;
+    z-index: 5;
 
 }
 #left-arm {
-    background-color: purple;
+    background-color: none;
     position: absolute;
-    top: 90px;
-    width: 35px;
-    height: 110px;
-    left: 31%;
+    display: flex;
+    justify-content: center;
+    top: 10px;
+    width: 200px;
+    height: 400px;
+    left: 22%;
+    z-index: 4;
 }
 #right-arm {
-    background-color: purple;
+    background-color: none;
     position: absolute;
-    top: 90px;
-    width: 35px;
+    display: flex;
+    justify-content: center;
+    top: 135px;
+    width: 150px;
     height: 110px;
-    left: 62%;
+    left: 50%;
+    z-index: 4;
+}
+#crotch {
+    background-color: none;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 250px;
+    width: 150px;
+    height: 120px;
+    left: 39.4%;
+    z-index: 11;
 }
 #left-leg {
-    background-color: aqua;
+    background-color: none;
     position: absolute;
-    top: 225px;
-    width: 45px;
-    height: 135px;
-    left: 39%
+    display: flex;
+    justify-content: center;
+    top: 190px;
+    width: 225px;
+    height: 225px;
+    left: 20.7%;
+    z-index: 10;
 }
 #right-leg {
-    background-color: aqua;
+    background-color: none;
     position: absolute;
-    top: 225px;
-    width: 45px;
-    height: 135px;
-    left: 52%
+    display: flex;
+    justify-content: center;
+    top: 190px;
+    width: 225px;
+    height: 225px;
+    left: 47.7%;
+    z-index: 10;
 }
