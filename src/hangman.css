@@ -18,18 +18,18 @@ main {
     display: flex;
     justify-content: center;
     align-self: center;
-    top: -125px;
-    left: -275px;
-    width: 1250px;
-    height: 650px;
-    z-index: 1;
+    top: -136px;
+    left: -150px;
+    width: 1000px;
+    height: 680px;
+    z-index: 20;
 }
 #border-1 {
     border: 3px solid goldys ;
     position: relative;
     display: flex;
     align-self: center;
-    top: 440px;
+    top: 445px;
     left: 0px;
     width: 840px;
     height: 480px;
@@ -52,7 +52,7 @@ main {
     z-index: 2;
 }
 #spacer {
-    height: 90px;
+    height: 105px;
 }
 #objective-word {
     border: 1px solid black;
@@ -186,4 +186,7 @@ main {
     height: 225px;
     left: 47.7%;
     z-index: 10;
+}
+.hidden {
+    display: none;
 }
