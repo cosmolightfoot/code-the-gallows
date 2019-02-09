@@ -11,17 +11,30 @@ main {
     justify-content: center;
     flex-direction: column;
 }
+#border-1 {
+    border: 3px solid gold;
+    position: relative;
+    top: 440px;
+    left: 200px;
+    width: 840px;
+    height: 480px;
+    background-image: url('../assets/ray-background.png');
+    background-position: center;
+    z-index: 0;
+}
 #gallows {
     width: 700px;
     height: 400px;
     position: relative;
     display: flex;
+    border: 5px solid black;
     align-self: center;
     background-image: url('../assets/gallows-1.jpeg');
     background-position: top;
     background-size: 30%;
     background-color: #212121;
     background-repeat: no-repeat;
+    z-index: 1;
 }
 #objective-word {
     border: 1px solid black;
@@ -71,10 +84,10 @@ main {
     display: flex;
     justify-content: center;
     position: absolute;
-    width: 85px;
-    height: 85px;
-    top: 93px;
-    left: 44.4%;
+    width: 83px;
+    height: 83px;
+    top: 97px;
+    left: 44.7%;
 }
 #torso {
     background-color: none;
@@ -87,7 +100,18 @@ main {
     left: 41.1%;
     padding: 0px;
     z-index: 5;
-
+}
+#wings {
+    background-color: none;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 30px;
+    width: 125px;
+    height: 200px;
+    left: 41.1%;
+    padding: 0px;
+    z-index: ;
 }
 #left-arm {
     background-color: none;

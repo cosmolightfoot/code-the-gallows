@@ -11,6 +11,11 @@ const buildGallows = [
         imgWidth: 170
     },
     {
+        name: 'wings',
+        imgSrc: '../assets/wings-1.png',
+        imgWidth: 500
+    },
+    {
         name: 'left-arm',
         imgSrc: '../assets/celery-hand-1.png',
         imgWidth: 300
