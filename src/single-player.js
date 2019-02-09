@@ -39,6 +39,11 @@ const buildGallows = [
         name: 'right-leg',
         imgSrc:'../assets/tentacles-1.png',
         imgWidth: 225
+    },
+    {
+        name: 'frame', 
+        imgSrc: '../assets/picture-frame-1.png',
+        imgWidth: 950
     }
 ];
 
