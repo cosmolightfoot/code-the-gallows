@@ -17,18 +17,18 @@ main {
     position: relative;
     background-image: url('../assets/gallows-1.jpeg');
     background-position: top;
-    background-size: 40%;
+    background-size: 55%;
     background-color: #212121;
     background-repeat: no-repeat;
 }
-#noose {
-    background-color: blue;
-    position: absolute;
-}
 #head {
-    background-color: green;
+    background-image: url('../assets/will-ferrell-1.png');
+    display: flex;
+    justify-content: center;
     position: absolute;
-    top: 20px;
+    width: 80px;
+    height: 100px;
+    top: 115px;
     left: 45%;
 }
 #torso {
