@@ -61,82 +61,82 @@ const rowThreeNode = document.getElementById('row-three');
 
 const buildLetterButtons = [
     {
-        letter: 'B'
+        letter: 'b'
     },
     {
-        letter: 'C'
+        letter: 'c'
     },
     {
-        letter: 'D'
+        letter: 'd'
     },
     {
-        letter: 'F'
+        letter: 'f'
     },
     {
-        letter: 'G'
+        letter: 'g'
     },
     {
-        letter: 'H'
+        letter: 'h'
     },
     {
-        letter: 'J'
+        letter: 'j'
     },
     {
-        letter: 'K'
+        letter: 'k'
     },
     {
-        letter: 'L'
+        letter: 'k'
     },
     {
-        letter: 'M'
+        letter: 'm'
     },
     {
-        letter: 'N'
+        letter: 'n'
     },
     {
-        letter: 'A'
+        letter: 'a'
     },
     {
-        letter: 'E'
+        letter: 'e'
     },
     {
-        letter: 'I'
+        letter: 'i'
     },
     {
-        letter: 'O'
+        letter: 'o'
     },
     {
-        letter: 'U'
+        letter: 'u'
     },
     {
-        letter: 'Y'
+        letter: 'y'
     },
     {
-        letter: 'P'
+        letter: 'p'
     },
     {
-        letter: 'Q'
+        letter: 'q'
     },
     {
-        letter: 'R'
+        letter: 'r'
     },
     {
-        letter: 'S'
+        letter: 's'
     },
     {
-        letter: 'T'
+        letter: 't'
     },
     {
-        letter: 'V'
+        letter: 'v'
     },
     {
-        letter: 'W'
+        letter: 'w'
     },
     {
-        letter: 'X'
+        letter: 'x'
     },
     {
-        letter: 'Z'
+        letter: 'z'
     }
 ];
 
@@ -149,23 +149,34 @@ for(let index = 0; index < 10; index++) {
     const letterButton = document.createElement('button');
     letterButton.classList.add('letter-button');
     letterButton.textContent = buildLetterButtons[index].letter;
+    letterButton.value = buildLetterButtons[index].letter;
     rowOneNode.appendChild(letterButton);
+    letterButton.addEventListener('click', function(){
+        checkLetter(letterButton.value);
+        console.log('it worked', letterButton.value);
+    });
 }
 //row2
 for(let index = 10; index < 18; index++) {
     const letterButton = document.createElement('button');
     letterButton.classList.add('letter-button');
     letterButton.textContent = buildLetterButtons[index].letter;
-
+    letterButton.value = buildLetterButtons[index].letter;
     rowTwoNode.appendChild(letterButton);
+    letterButton.addEventListener('click', function(){
+        checkLetter(letterButton.value);
+    });
 //row3
 }
 for(let index = 18; index < 26; index++) {
     const letterButton = document.createElement('button');
     letterButton.classList.add('letter-button');
     letterButton.textContent = buildLetterButtons[index].letter;
-
+    letterButton.value = buildLetterButtons[index].letter;
     rowThreeNode.appendChild(letterButton);
+    letterButton.addEventListener('click', function(){
+        checkLetter(letterButton.value);
+    });
 }
 
 
@@ -206,6 +217,6 @@ function checkLetter(letter) {
     }
     selectHiddenLetters = document.querySelectorAll('.hidden-letter');
 }
+console.log(objectiveWord);
 
-checkLetter();
 
