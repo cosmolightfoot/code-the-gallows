@@ -77,6 +77,9 @@ main {
     font-weight: bold;
     margin-top: 8px;
 }
+.obj-letters {
+    transition: all 250ms ease-in-out;
+}
 #underline {
     display: flex;
     flex-direction: row;
@@ -155,7 +158,6 @@ main {
     height: 200px;
     left: 41.1%;
     padding: 0px;
-    z-index: ;
 }
 #left-arm {
     background-color: none;
@@ -212,6 +214,9 @@ main {
     left: 47.7%;
     z-index: 10;
 }
-.hidden {
+.hidden-img {
     display: none;
+}
+.hidden-letter {
+    opacity: 0;
 }

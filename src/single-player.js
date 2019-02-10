@@ -48,14 +48,13 @@ for(let index = 0; index < buildGallows.length; index++) {
     const blockImage = document.createElement('img');
     blockImage.width = buildGallows[index].imgWidth;
     blockImage.src = buildGallows[index].imgSrc;
-    blockImage.classList.add('hidden');
+    blockImage.classList.add('hidden-img');
     penaltyBlock.classList.add('penalty-block');
     penaltyBlock.id = buildGallows[index].name;
     penaltyBlock.appendChild(blockImage);
     gallowsNode.appendChild(penaltyBlock);
 }
 
-const letterButtonsNode = document.getElementById('letter-buttons');
 const rowOneNode = document.getElementById('row-one');
 const rowTwoNode = document.getElementById('row-two');
 const rowThreeNode = document.getElementById('row-three');
@@ -181,9 +180,8 @@ for(let i = 0; i < wordSplit.length; i++) {
     objLetter.id = 'obj-letter-' + i;
     objLetter.textContent = wordSplit[i];
     objLetter.classList.add('obj-letter');
-    // objLetter.classList.add('hidden');
+    objLetter.classList.add('hidden-letter');
     objectiveNode.appendChild(objLetter);
-    console.log(objLetter);
 }
 //create obj underlines
 for(let i = 0; i < wordSplit.length; i++) {
@@ -194,19 +192,20 @@ for(let i = 0; i < wordSplit.length; i++) {
 }
 
 
-function checkLetter() {
-    let letter = 'a';
+
+function checkLetter(letter) {
+    let trueArray = [];
+    let selectHiddenLetters = document.querySelectorAll('.hidden-letter');
     for(let i = 0; i < wordSplit.length; i++) {
         if(wordSplit[i] === letter) {
-            console.log('true');
+            selectHiddenLetters[i].classList.remove('hidden-letter');
+            trueArray.push(i);
+            wordSplit.splice(i, 1);
         }
-        else {
-            console.log('false');
-        }
+        
     }
+    selectHiddenLetters = document.querySelectorAll('.hidden-letter');
 }
-console.log('word:', objectiveWord);
-console.log('guessed letter', checkLetter('a'));
 
-
+checkLetter();
 
