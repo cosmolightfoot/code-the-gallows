@@ -36,3 +36,20 @@ If(word is completed) {
 else {
     displays 'defeat'
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[b,a,n,a,n,a]
+i = 0
+wordSplit = 
