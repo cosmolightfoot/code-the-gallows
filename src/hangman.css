@@ -58,6 +58,17 @@ main {
 #spacer {
     height: 105px;
 }
+#win-or-lose {
+    display: flex;
+    background: white;
+    align-self: center;
+    position: absolute;
+    z-index: 12;
+    border: 3px solid red;
+    left: 21%;
+    width: 400px;
+    height: 200px;
+}
 #objective-word {
     border: 1px solid black;
     display: flex;
