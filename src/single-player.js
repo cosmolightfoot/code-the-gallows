@@ -174,6 +174,8 @@ const buildLetterButtons = [
 let selectHiddenLetters = document.querySelectorAll('.hidden-letter');
 
 //builds letter buttons
+let selectHiddenImages = document.querySelectorAll('.hidden-img');
+console.log('hidden', selectHiddenImages.length);
 
 //row1
 for(let index = 0; index < 10; index++) {
@@ -207,8 +209,9 @@ for(let index = 10; index < 18; index++) {
         console.log('hidden nodelist', selectHiddenLetters);
 
     });
-//row3
 }
+//row3
+
 for(let index = 18; index < 26; index++) {
     const letterButton = document.createElement('button');
     letterButton.classList.add('letter-button');
@@ -217,27 +220,25 @@ for(let index = 18; index < 26; index++) {
     rowThreeNode.appendChild(letterButton);
     letterButton.addEventListener('click', function(){
         checkLetter(letterButton.value);
-        console.log('it worked', letterButton.value);
-        console.log(wordSplit);
         selectHiddenLetters = document.querySelectorAll('.hidden-letter');
-        console.log('hidden nodelist', selectHiddenLetters);
     });
 }
-
-let selectHiddenImages = document.querySelectorAll('.hidden-img');
 //function reveals letters that match the objective word
+let trueArray = [];
 function checkLetter(letter) {
+    trueArray = [];
     for(let i = 0; i < wordSplit.length; i++) {
         if(wordSplit[i] === letter) {
             const selectCorrect = document.querySelectorAll('.' + wordSplit[i]);
             for(let j = 0; j < selectCorrect.length; j++) {
                 selectCorrect[j].classList.remove('hidden-letter');
+                trueArray.push(i);
             }
         }
-        else {
-            selectHiddenImages[0].classList.remove('hidden-img');
-            selectHiddenImages = document.querySelectorAll('.hidden-img');
-        }
+    }
+    if(trueArray.length === 0) {
+        selectHiddenImages[0].classList.remove('hidden-img');
+        selectHiddenImages = document.querySelectorAll('.hidden-img');
     }
 }
 console.log(objectiveWord);
@@ -246,4 +247,3 @@ console.log(objectiveWord);
 if(selectHiddenImages.length === 0) {
     alert('you lose');
 }
-console.log(selectHiddenImages.length);
