@@ -231,3 +231,6 @@ main {
 .hidden-letter {
     opacity: 0;
 }
+.end-game {
+    display: none;
+}

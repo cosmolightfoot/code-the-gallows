@@ -184,10 +184,7 @@ for(let index = 0; index < 10; index++) {
     rowOneNode.appendChild(letterButton);
     letterButton.addEventListener('click', function(){
         checkLetter(letterButton.value);
-        console.log('it worked', letterButton.value);
-        console.log(wordSplit);
         selectHiddenLetters = document.querySelectorAll('.hidden-letter');
-        console.log('hidden nodelist', selectHiddenLetters);
 
     });
 }
@@ -199,13 +196,8 @@ for(let index = 10; index < 18; index++) {
     letterButton.value = buildLetterButtons[index].letter;
     rowTwoNode.appendChild(letterButton);
     letterButton.addEventListener('click', function(){
-        console.log('button value:', letterButton.value)
         checkLetter(letterButton.value);
-        console.log('it worked', letterButton.value);
-        console.log(wordSplit);
         selectHiddenLetters = document.querySelectorAll('.hidden-letter');
-        console.log('hidden nodelist', selectHiddenLetters);
-
     });
 }
 //row3
@@ -223,11 +215,13 @@ for(let index = 18; index < 26; index++) {
 }
 //function reveals letters that match the objective word
 let trueArray = [];
+let winArray = [];
 function checkLetter(letter) {
     trueArray = [];
     for(let i = 0; i < wordSplit.length; i++) {
         if(wordSplit[i] === letter) {
             const selectCorrect = document.querySelectorAll('.' + wordSplit[i]);
+            winArray.push(i);
             for(let j = 0; j < selectCorrect.length; j++) {
                 selectCorrect[j].classList.remove('hidden-letter');
                 trueArray.push(i);
@@ -238,10 +232,16 @@ function checkLetter(letter) {
         selectHiddenImages[0].classList.remove('hidden-img');
         selectHiddenImages = document.querySelectorAll('.hidden-img');
     }
+    if(selectHiddenImages.length === 0) {
+        alert('you lose');
+    }
+    if(winArray.length === wordSplit.length) {
+        alert('you win');
+    }
+    console.log('wordSplit length', wordSplit.length);
+    console.log('winArray.length', winArray.length);
 }
+
 console.log(objectiveWord);
+console.log(document.getElementsByClassName('end-game'));
 
-
-if(selectHiddenImages.length === 0) {
-    alert('you lose');
-}
