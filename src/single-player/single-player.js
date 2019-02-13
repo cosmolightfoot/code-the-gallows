@@ -172,7 +172,6 @@ const buildLetterButtons = [
 ];
 
 let selectHiddenLetters = document.querySelectorAll('.hidden-letter');
-console.log(selectHiddenLetters);
 //builds letter buttons
 let selectHiddenImages = document.querySelectorAll('.hidden-img');
 
@@ -225,6 +224,7 @@ const messageNode = document.getElementById('end-msg');
 
 function checkLetter(letter) {
     trueArray = [];
+    const redLetterNode = document.getElementById('objective-word');
     for(let i = 0; i < wordSplit.length; i++) {
         if(wordSplit[i] === letter) {
             const selectCorrect = document.querySelectorAll('.' + wordSplit[i]);
@@ -237,14 +237,21 @@ function checkLetter(letter) {
             }
         }
     }
-    if(trueArray.length === 0) {
+    if(trueArray.length === 0 && selectHiddenImages.length > 0) {
         selectHiddenImages[0].classList.remove('hidden-img');
         selectHiddenImages = document.querySelectorAll('.hidden-img');
     }
     if(selectHiddenImages.length === 0) {
         endMessageNode.classList.remove('hidden-letter');
         messageNode.classList.remove('hidden-letter');
+        selectHiddenLetters = document.querySelectorAll('.hidden-letter');
         messageNode.textContent = 'Your inability to word killed whatever this thing is. Great.';
+        redLetterNode.style.color = 'red';
+        redLetterNode.style.opacity = 0.7;
+        for(let k = 0; k < selectHiddenLetters.length; k++) {
+            selectHiddenLetters[k].classList.remove('hidden-letter');
+        }
+
     }
     if(winArray.length === wordSplit.length) {
         endMessageNode.classList.remove('hidden-letter');
@@ -254,5 +261,5 @@ function checkLetter(letter) {
 }
 
 console.log(objectiveWord);
-console.log(document.getElementsByClassName('end-game'));
+// console.log(document.getElementsByClassName('end-game'));
 
