@@ -172,7 +172,7 @@ const buildLetterButtons = [
 ];
 
 let selectHiddenLetters = document.querySelectorAll('.hidden-letter');
-
+console.log(selectHiddenLetters);
 //builds letter buttons
 let selectHiddenImages = document.querySelectorAll('.hidden-img');
 
@@ -180,6 +180,7 @@ let selectHiddenImages = document.querySelectorAll('.hidden-img');
 for(let index = 0; index < 10; index++) {
     const letterButton = document.createElement('button');
     letterButton.classList.add('letter-button');
+    letterButton.id = 'button-' + buildLetterButtons[index].letter;
     letterButton.textContent = buildLetterButtons[index].letter;
     letterButton.value = buildLetterButtons[index].letter;
     rowOneNode.appendChild(letterButton);
@@ -193,6 +194,7 @@ for(let index = 0; index < 10; index++) {
 for(let index = 10; index < 18; index++) {
     const letterButton = document.createElement('button');
     letterButton.classList.add('letter-button');
+    letterButton.id = 'button-' + buildLetterButtons[index].letter;
     letterButton.textContent = buildLetterButtons[index].letter;
     letterButton.value = buildLetterButtons[index].letter;
     rowTwoNode.appendChild(letterButton);
@@ -206,6 +208,7 @@ for(let index = 10; index < 18; index++) {
 for(let index = 18; index < 26; index++) {
     const letterButton = document.createElement('button');
     letterButton.classList.add('letter-button');
+    letterButton.id = 'button-' + buildLetterButtons[index].letter;
     letterButton.textContent = buildLetterButtons[index].letter;
     letterButton.value = buildLetterButtons[index].letter;
     rowThreeNode.appendChild(letterButton);
@@ -217,11 +220,16 @@ for(let index = 18; index < 26; index++) {
 //function reveals letters that match the objective word
 let trueArray = [];
 let winArray = [];
+const endMessageNode = document.getElementById('win-or-lose');
+const messageNode = document.getElementById('end-msg');
+
 function checkLetter(letter) {
     trueArray = [];
     for(let i = 0; i < wordSplit.length; i++) {
         if(wordSplit[i] === letter) {
             const selectCorrect = document.querySelectorAll('.' + wordSplit[i]);
+            const buttonSelect = document.getElementById('button-' + wordSplit[i]);
+            buttonSelect.disable = true;
             winArray.push(i);
             for(let j = 0; j < selectCorrect.length; j++) {
                 selectCorrect[j].classList.remove('hidden-letter');
@@ -234,13 +242,15 @@ function checkLetter(letter) {
         selectHiddenImages = document.querySelectorAll('.hidden-img');
     }
     if(selectHiddenImages.length === 0) {
-        alert('you lose');
+        endMessageNode.classList.remove('hidden-letter');
+        messageNode.classList.remove('hidden-letter');
+        messageNode.textContent = 'Your inability to word killed whatever this thing is. Great.';
     }
     if(winArray.length === wordSplit.length) {
-        alert('you win');
+        endMessageNode.classList.remove('hidden-letter');
+        messageNode.classList.remove('hidden-letter');
+        messageNode.textContent = 'You guessed correct letters. Terrific.';
     }
-    console.log('wordSplit length', wordSplit.length);
-    console.log('winArray.length', winArray.length);
 }
 
 console.log(objectiveWord);
