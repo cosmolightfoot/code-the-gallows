@@ -260,6 +260,5 @@ function checkLetter(letter) {
     }
 }
 
-console.log(objectiveWord);
-// console.log(document.getElementsByClassName('end-game'));
+
 
