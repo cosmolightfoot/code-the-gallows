@@ -7,7 +7,7 @@ let ranNum = Math.floor(Math.random() * wordList.length);
 let objectiveWord = wordList[ranNum];
 // let objectiveWord = 'banana';
 const gallowsNode = document.getElementById('gallows');
-const buildGallows = [
+const gallowsArray = [
     {
         name: 'head',
         imgSrc: '../assets/will-ferrell-1.png',
@@ -51,14 +51,14 @@ const buildGallows = [
 ];
 
 //builds gallows images
-for(let index = 0; index < buildGallows.length; index++) {
+for(let index = 0; index < gallowsArray.length; index++) {
     const penaltyBlock = document.createElement('div');
     const blockImage = document.createElement('img');
-    blockImage.width = buildGallows[index].imgWidth;
-    blockImage.src = buildGallows[index].imgSrc;
+    blockImage.width = gallowsArray[index].imgWidth;
+    blockImage.src = gallowsArray[index].imgSrc;
     blockImage.classList.add('hidden-img');
     penaltyBlock.classList.add('penalty-block');
-    penaltyBlock.id = buildGallows[index].name;
+    penaltyBlock.id = gallowsArray[index].name;
     penaltyBlock.appendChild(blockImage);
     gallowsNode.appendChild(penaltyBlock);
 }
