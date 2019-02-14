@@ -260,3 +260,6 @@ main {
 .end-game {
     display: none;
 }
+.hidden-button {
+    visibility: hidden;
+}
